@@ -40,11 +40,8 @@ body {
   50% {
     background-image: url(./images/coding.avif);
   }
-  75% {
-    background-image: url(./images/Secondbg.jpg);
-  }
   100% {
-    background-image: url(./images/coding.avif);
+    background-image: url(./images/Secondbg.jpg);
   }
 }
 .overlay {
