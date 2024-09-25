@@ -32,22 +32,24 @@ background-image: url(./images/Secondbg.jpg);
 
 
 @keyframes imagesChanges {
-   
-    0%{
+   0%{
+        background-image: url(./images/Secondbg.jpg);
+   }
+    25%{
         background-image: url(./images/fourthBg.avif);
-        opacity: 0;
+      
     }
     50%{
         background-image: url(./images/coding.avif);
-    opacity: 0.5;
+   
     }
     75%{
         background-image: url(./images/Secondbg.jpg);
-        opacity: 1;
+       
     }
     100%{
         background-image: url(./images/coding.avif);
-        opacity: 0.5;
+      
     }
 
 }

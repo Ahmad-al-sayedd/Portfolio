@@ -23,6 +23,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   animation-name: imagesChanges;
   animation-duration: 80s;
   animation-iteration-count: infinite;
