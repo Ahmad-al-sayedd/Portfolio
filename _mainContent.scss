@@ -1,0 +1,564 @@
+main{
+    @extend %flex;
+    flex-direction: column;
+    color: white;
+    padding-top: 7rem;
+    @include widthMargin(95%, auto);
+
+.main-aboutMe{
+   
+    z-index: 1;
+    h2{
+        font-size: 2rem;
+        text-align: start;
+        color: $secondary-color;
+        text-shadow: 2px 1px 2px $primary-color;
+    letter-spacing: 0.3rem;
+    padding: 2rem;
+    border-top: 2px solid $primary-color;
+   
+   
+    }
+    article{
+       @extend %flex;
+       justify-content: space-around;
+       padding-top:1rem ;
+       p{
+        width: 50%;
+        padding-top: 2rem;
+        text-align:justify;
+        line-height: 2rem;
+    }
+    .main-skills{
+      
+        width: 40%;
+        padding-top:3rem ;
+        text-align: center;
+        border-radius: 1rem;
+        backdrop-filter: blur(6px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        border: none;
+        margin-top: 2rem;
+       h3{
+        letter-spacing: 1.5px
+       }
+        ul{
+            @extend %flex;
+           
+            flex-direction: column;
+            padding: 2rem 0;
+            
+            li{
+               
+                font-weight: bold;
+                display: flex;
+            
+                justify-content: space-between;
+                align-items: center;
+                width: 65%;
+                padding-top: 1rem;
+
+
+  span{
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+        width: 20rem;
+        height: 10px;
+        border-radius:10px ;
+        margin-left: 1rem;
+        position: relative;
+       
+          &::after{
+            content: "";
+            position: absolute;
+            background: rgb(27,214,218);
+            background: linear-gradient(90deg, rgba(27,214,218,1) 0%, rgba(75,239,242,1) 0%, rgba(3,230,242,1) 81%, rgba(249,249,249,1) 100%);                     
+            top: 0;
+            left: 0;
+            height: 100%; 
+            border-radius:10px ;
+
+          
+          }
+          &.progress-70::after{
+            width: 70%;
+          }
+          &.progress-50::after{
+            width: 50%;
+          }
+          &.progress-60::after{
+            width: 60%;
+          }
+          &.progress-40::after{
+            width: 40%;
+          }
+        
+  }
+            }
+        }
+    }
+    }
+
+}
+// Projects Section###################################
+.main-projects{
+    z-index: 1;
+margin-top: 4rem;
+width: 100%;
+
+    h2{
+        font-size: 2rem;
+        text-align: end;
+        color: $secondary-color;
+        text-shadow: 2px 1px 2px $primary-color;
+    letter-spacing: 0.3rem;
+    padding: 2rem;
+    border-top: 2px solid $primary-color;
+    
+    }
+    article{
+        backdrop-filter: blur(6px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        padding: 2rem 0;
+ margin: 10rem 0;
+ border-radius: 1rem;
+
+
+   @extend %flex;
+   justify-content: space-evenly;
+   div{
+    // background-color: red;
+    border: 1px solid $background-color;
+ 
+    border-radius: 0.2rem;
+    box-shadow: 1px 1px  10px 2px $background-color;
+    width:40%;
+    @extend %flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    p{
+        padding: 1rem 0rem;
+      line-height: 1.6;
+     
+      font-size: 1rem;
+       
+        letter-spacing: 1.2px;
+      
+      
+    
+    }
+    button{
+        border: none;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        border-radius: 0.2rem;
+        box-shadow: 3px 1px 4px $background-color;
+        font-weight: bold;
+        border: 1px solid $secondary-color;
+        cursor: pointer;
+        margin-top: 0.5rem;
+    transition: all 0.5s ease;
+   &:hover{
+    box-shadow: 1px 1px 10px rgb(247, 247, 247);
+    border: 1px solid $background-color;
+
+
+   }
+    a{
+        color: $primary-color;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 1px black;
+    }
+    }
+   }
+
+figure{
+   
+    width: 40%;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 0.2rem;
+        transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+
+        &:hover {
+            transform: scale(1.1); /* Zoom in by 10% */
+          }
+       }
+}
+ 
+  
+
+    }
+    article:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+}
+    
+}
+
+
+
+
+// Mobile Version###################################
+@media screen and (max-width: 768px) {
+
+main{
+
+    .main-aboutMe{
+        h2{
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+        article{
+            flex-direction: column;
+         
+            p{
+                width: 50%;
+                text-align: center;
+                width: 100%;
+              
+                
+            }
+            .main-skills{
+                width: 100%;
+                margin-top: 2rem;
+                ul{
+                    li{
+                        span{
+                            width: 10rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // Projects Section###################################
+
+
+    .main-projects{
+     
+    
+        h2{
+            font-size: 2rem;
+            text-align: end;
+            color: $secondary-color;
+            text-shadow: 2px 1px 2px $primary-color;
+     
+        padding: 1rem;
+        
+        }
+        article{
+        
+            padding: 2rem 1rem;
+     margin: 5rem 0;
+  
+       flex-direction: column;
+       div{
+        
+        width:100%;
+        @extend %flex;
+        flex-direction: column;
+        justify-items: flex-start;
+        align-items: flex-start;
+        padding: 1rem 1rem;
+        border: none;
+        box-shadow: none;
+        p{
+            padding: 3rem 0rem;
+          line-height: 1.6;
+         
+          font-size: 1rem;
+           
+            letter-spacing: 1.2px;
+            text-align: center;
+          
+          
+        
+        }
+        button{
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            padding: 1rem 2rem;
+            border-radius: 0.2rem;
+            box-shadow: 1px 1px 4px $background-color;
+            font-weight: bold;
+            border: 1px solid $secondary-color;
+            cursor: pointer;
+            margin-top: 0.5rem;
+       
+        a{
+            color: $primary-color;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        }
+       }
+    figure{
+       
+       
+        width: 100%;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 0.2rem;
+            transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+    
+            &:hover {
+                transform: scale(1.1); /* Zoom in by 10% */
+              }
+           }
+    }
+     
+      
+    
+        }
+        article:nth-child(odd){
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+
+
+    
+}
+
+
+
+
+// Tablet Version###################################
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+
+    main{
+        @extend %flex;
+        flex-direction: column;
+        color: white;
+        padding-top: 7rem;
+        @include widthMargin(95%, auto);
+    
+    .main-aboutMe{
+        // @extend %flex;
+        z-index: 10;
+        h2{
+            font-size: 2rem;
+           
+            text-align: center;
+            color: $secondary-color;
+            text-shadow: 5px 1px 2px $primary-color;
+        letter-spacing: 0.3rem;
+        padding: 2rem;
+        border-top: 2px solid $secondary-color;
+      
+        }
+        article{
+           @extend %flex;
+           justify-content: space-around;
+           padding-top:1rem ;
+           flex-direction: column;
+           p{
+            width: 50%;
+            padding-top: 2rem;
+            text-align:justify;
+            line-height: 2rem;
+        }
+        .main-skills{
+          
+            width: 100%;
+            padding-top:3rem ;
+            text-align: center;
+            border-radius: 1rem;
+            backdrop-filter: blur(6px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            border: none;
+            margin-top: 2rem;
+           
+    
+            ul{
+                @extend %flex;
+               
+                flex-direction: column;
+                padding: 2rem 0;
+                
+                li{
+                   
+                    font-weight: bold;
+                    display: flex;
+                
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 65%;
+                    padding-top: 1rem;
+    
+    
+      span{
+        background-color: rgb(255, 255, 255);
+        display: inline-block;
+            width: 20rem;
+            height: 10px;
+            border-radius:10px ;
+            margin-left: 1rem;
+            position: relative;
+           
+              &::after{
+                content: "";
+                position: absolute;
+                background: rgb(27,214,218);
+                background: linear-gradient(90deg, rgba(27,214,218,1) 0%, rgba(75,239,242,1) 0%, rgba(3,230,242,1) 81%, rgba(249,249,249,1) 100%);                     
+                top: 0;
+                left: 0;
+                height: 100%; 
+                border-radius:10px ;
+    
+              
+              }
+              &.progress-70::after{
+                width: 70%;
+              }
+              &.progress-50::after{
+                width: 50%;
+              }
+              &.progress-60::after{
+                width: 60%;
+              }
+              &.progress-40::after{
+                width: 40%;
+              }
+            
+      }
+                }
+            }
+        }
+        }
+    
+    }
+
+    // Projects Section###################################
+
+    .main-projects{
+        z-index: 1;
+    margin-top: 4rem;
+    width: 100%;
+    
+        h2{
+            font-size: 2rem;
+            text-align: end;
+            color: $secondary-color;
+            text-shadow: 2px 1px 2px $primary-color;
+        letter-spacing: 0.3rem;
+        padding: 2rem;
+        border-top: 2px solid $primary-color;
+        }
+        article{
+            backdrop-filter: blur(6px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            padding: 2rem 0;
+     margin: 10rem 0;
+     border-radius: 1rem;
+    
+    
+       @extend %flex;
+       justify-content: space-evenly;
+       div{
+        border: 1px solid $background-color;
+ 
+        border-radius: 0.2rem;
+        box-shadow: 1px 1px  10px 2px $background-color;
+        gap: 1rem;
+        p{
+            padding: 1.5rem 0rem;
+          line-height: 1.6;
+         
+          font-size: 0.9rem;
+           
+            letter-spacing: 1.2px;
+          
+          
+        
+        }
+    
+        button{
+            
+            border: none;
+            background-color: transparent;
+            padding: 1rem 2rem;
+            border-radius: 0.2rem;
+            box-shadow: 1px 1px 4px $background-color;
+            font-weight: bold;
+            border: 1px solid $secondary-color;
+            cursor: pointer;
+            margin-top: 0.5rem;
+       
+        a{
+            color: $primary-color;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        }
+       }
+//        p{
+//         padding: 1rem 2rem;
+//       line-height: 1.7;
+//         width:35%;
+//       font-size: 0.9rem;
+//         border-radius: 1rem;
+    
+//       color: $secondary-color;
+//       box-shadow: 1px 1px 10px $primary-color;
+//   font-weight: 500;
+//       text-align:justify;
+//       letter-spacing: -0.7px;
+//       z-index: 10;
+
+    
+//     }
+    figure{
+       
+        width: 50%;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 0.2rem;
+            transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+    
+            &:hover {
+                transform: scale(1.1); /* Zoom in by 10% */
+              }
+           }
+    }
+     
+      
+    
+        }
+        article:nth-child(odd){
+            flex-direction: row-reverse;
+        }
+    }
+        
+    }
+    
+    
+    
+
+}
